@@ -22,7 +22,7 @@ const TodoInput = () => {
     return (
         <div className="input-group my-5">
             <input value={text} onChange={(e) => handleChange(e)} type="text" maxLength={40} className="form-control" placeholder="Add new ..." />
-            <button onClick={handleSubmit} className={`btn btn-${theme ? "warning" : "primary"}`} type="button" id="button-addon2">Ekle</button>
+            <button onClick={handleSubmit} className={`btn btn-${theme ? "warning" : "primary"} ${text.trim().length <= 0 && "disabled" }`} type="button" id="button-addon2">Ekle</button>
         </div>
     )
 }
