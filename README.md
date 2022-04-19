@@ -1,6 +1,6 @@
 #Live Site
 
-https://625f2586174c3a31d59322ac--react-basic-todo-batuhan-baybas.netlify.app/
+https://625f3740fd2cac0009217e7f--react-basic-todo-batuhan-baybas.netlify.app/
 
 ## Simple Todo App With Dark Mode
 
