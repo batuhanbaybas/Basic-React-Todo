@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { useSelector } from "react-redux";
+import ThemeIcon from "./Component/ThemeIcon";
+import TodoInput from "./Component/TodoInput";
+import TodoLit from "./Component/TodoLit";
+import { themeSelector } from "./Redux/themeSlice";
+
 
 function App() {
+  const theme = useSelector(themeSelector);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={`${theme ? " bg-dark" : "bg-white"} vh-100`}>
+      <div className="w-25 mx-auto">
+        <ThemeIcon />
+        <TodoInput />
+        <TodoLit />
+      </div>
     </div>
   );
 }
