@@ -21,7 +21,7 @@ const TodoLit = () => {
         <ul className="list-group">
             {
                 local ? local.map(todo => (
-                    <li onClick={() => handleToogle(todo.id)}  key={todo.id} className="list-group-item d-flex justify-content-between align-items-start">
+                    <li onClick={() => handleToogle(todo.id)} key={todo.id} className="list-group-item d-flex justify-content-between align-items-start cursor-pointer" style={{ "cursor": "pointer" }}>
                         <div className={`ms-2 me-auto ${todo.completed && "text-decoration-line-through"}`}>
                             {todo.text}
                         </div>

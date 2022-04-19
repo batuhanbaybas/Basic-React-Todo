@@ -8,7 +8,7 @@ import { themeSelector } from "./Redux/themeSlice";
 function App() {
   const theme = useSelector(themeSelector);
   return (
-    <div className={`${theme ? " bg-dark" : "bg-white"} vh-100`}>
+    <div className={`${theme ? " bg-dark" : "bg-white"} min-vh-100 pb-5`}>
       <div className="w-25 mx-auto">
         <ThemeIcon />
         <TodoInput />
