@@ -9,7 +9,6 @@ const ThemeIcon = () => {
 
     const handleTheme = () => {
         dispatch(toggleTheme())
-        console.log("first")
     }
 
     return (

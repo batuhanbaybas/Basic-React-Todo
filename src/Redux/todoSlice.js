@@ -3,12 +3,13 @@ import { createSlice, nanoid } from "@reduxjs/toolkit";
 const todoSlice = createSlice({
     name: 'todo',
     initialState: {
-        todos: [],
+        todos: localStorage.getItem('todos') ? JSON.parse(localStorage.getItem('todos')) : [],
     },
     reducers: {
         addTodo: {
             reducer: (state, action) => {
                 state.todos.push(action.payload);
+                localStorage.setItem('todos', JSON.stringify(state.todos));
 
             },
             prepare: ({ text }) => {
@@ -24,12 +25,14 @@ const todoSlice = createSlice({
         removeTodo: {
             reducer: (state, action) => {
                 state.todos = state.todos.filter(todo => todo.id !== action.payload);
+                localStorage.setItem('todos', JSON.stringify(state.todos));
             }
         },
         toggleTodo: {
             reducer: (state, action) => {
                 const todo = state.todos.find(todo => todo.id === action.payload);
                 todo.completed = !todo.completed;
+                localStorage.setItem('todos', JSON.stringify(state.todos));
 
             }
         }
